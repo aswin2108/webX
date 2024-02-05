@@ -1,66 +1,152 @@
-body{
-    margin: 0;
-    height: 100%;
-    width: 100%;
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: back;
+  font-family: 'Roboto', sans-serif;
 }
 
-.navbarContainer{
-    height: 8vh;
-    width: 100vw;
+.navbarContainer {
+  height: 8vh;
+  width: 100vw;
 }
 
-.mainContainer{
-    height: 92vh;
-    width: 100vw;
-    // background-color: aqua;
+.mainSectionContainer{
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 0.3rem; // Adjust scrollbar width
+      }
+     
+      &::-webkit-scrollbar-track {
+        background-color: #6b6868; // Set track color
+        border-radius: 10px; // Make scrollbar rounded
+      }
 }
 
-.sidepannelContainer{
-    background-color: rgb(75, 105, 212);
-    color: white;
-    font-size: 13px;
+.mainContainer {
+  height: 92vh;
+  width: 100vw;
+  // background-color: aqua;
+}
 
-    .hideArrow{
-        border-radius: 50%;
-        background-color: black;
-        font-size: 15px;
-        display: none;
-        cursor: default;
+.sidepannelContainer {
+  background-color: rgb(75, 105, 212);
+  color: white;
+  font-size: 13px;
+
+  .hideArrow {
+    border-radius: 50%;
+    background-color: black;
+    font-size: 15px;
+    display: none;
+    cursor: default;
+  }
+
+  &:hover {
+    .hideArrow {
+      display: block;
     }
-    
-    &:hover {
-        .hideArrow {
-            display: block;
-        }
-    }
-}
-
-
-.menuTxt{
-    margin-left: 10%;
-    width: fit-content;
-    
-}
-
-.sidepannelContainer__hideButtonContainer{
-    justify-content: right;
-}
-.search{
-    width: 88%;
-        border: 1px solid #555;
-        color: white;
-        padding: 9px 4px 9px 40px;
-background: transparent url("./assets/search.svg") no-repeat 13px;
-border-radius: 20px;
-background-color: #555;
-&::placeholder {
-    color: #cfcccc;
-    opacity: 1; /* Firefox */
   }
 }
 
-.navbar__profile{
-    border-radius: 50%;
-    background-color: #555;
-    padding: 5px;
+.menuTxt {
+  margin-left: 10%;
+  width: fit-content;
+}
+
+.sidepannelContainer__hideButtonContainer {
+  justify-content: right;
+}
+.search {
+  width: 88%;
+  border: 1px solid #555;
+  color: white;
+  padding: 9px 4px 9px 40px;
+  background: transparent url("./assets/search.svg") no-repeat 13px;
+  border-radius: 20px;
+  background-color: #555;
+  &::placeholder {
+    color: #cfcccc;
+    opacity: 1; 
+  }
+}
+
+.navbar__profile {
+  border-radius: 50%;
+  background-color: #555;
+  padding: 5px;
+}
+.meetList__Container {
+//   height: 38vh;
+  height: 100%;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 0.3rem; // Adjust scrollbar width
+  }
+ 
+  &::-webkit-scrollbar-track {
+    background-color: #6b6868; // Set track color
+    border-radius: 10px; // Make scrollbar rounded
+  }
+}
+.meetItem__profile {
+  width: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 5px;
+  background-color: #6e6c6c;
+  margin-right: 5px;
+  &:hover {
+    background-color: #cfcccc;
+  }
+}
+
+.leftList__item {
+  &:hover {
+    color: white;
+    background-color: #a09797;
+    cursor: default;
+  }
+}
+
+.menu__Item {
+  &:hover {
+    background-color: #565252;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Styles for screens smaller than 768px */
+  .sidepannelContainer {
+    display: none !important;
+  }
+  .mainSectionContainer{
+    width: 100vw !important;
+  }
+  .meetControlerContainer{
+    font-size: 10px !important;
+  }
+  .transparentBtn{
+    display: none !important;
+  }
+  .meetList__Container{
+    font-size: 12px !important;
+  }
+  
+}
+
+@media (max-width: 500px){
+  .meetControlerContainer{
+    font-size: 4px !important;
+  }
+  .meet__controls{
+      font-size: 12px !important;
+    }
+    .mainSectionContainer__top{
+      height: 35vh !important;
+    }
+    .meet__down-arrow{
+      display: none;
+      
+    }
 }
